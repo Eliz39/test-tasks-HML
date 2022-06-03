@@ -12,7 +12,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
 </head>
 <body>
     <div class="wrapper">
@@ -39,40 +39,6 @@
         </form>
 
     </div>
-<script>
-const submitBtn = document.querySelector(".form__input-submit");
-const email = document.querySelector(".form__input-email");
-const errorEmpty = document.querySelector(".empty-email");
-const errorWrong = document.querySelector(".wrong-email");
-const succes = document.querySelector(".subscribed");
-const container = document.querySelector(".container");
-
-submitBtn.addEventListener("click", (event) => {
-
-    event.preventDefault();
-
-    if(email.value == null || email.value == "") {
-        errorEmpty.classList.remove("hidden");
-    } else {
-        let fetchData = {
-            method: "POST",
-            body: JSON.stringify({email: email.value, js: true}),
-            headers: {"Content-Type":"application/json"}
-        }
-
-        fetch("http://localhost:5000/subscribed", fetchData)
-            .then(res => {
-                if(res.ok) {
-                    container.classList.add("hidden");
-                    succes.classList.remove("hidden");
-
-                } else {
-                    errorEmpty.classList.add("hidden");
-                    errorWrong.classList.remove("hidden");
-                }
-            })
-    }
-})
-</script>
+<script src="./app.js"></script>
 </body>
 </html>
