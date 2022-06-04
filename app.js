@@ -5,8 +5,8 @@ const errorWrong = document.querySelector(".wrong-email");
 const succes = document.querySelector(".subscribed");
 const container = document.querySelector(".container");
 
-submitBtn.addEventListener("click", (event) => {
-
+function sendForm(event) {
+    submitBtn.removeEventListener("click", sendForm);
     event.preventDefault();
 
     if(email.value == null || email.value == "") {
@@ -31,5 +31,8 @@ submitBtn.addEventListener("click", (event) => {
                 return res.json();
             })
             .then(text => console.log(text))
+            .finally(() =>  submitBtn.addEventListener("click", sendForm))
     }
-})
+}
+
+submitBtn.addEventListener("click", sendForm);
