@@ -8,7 +8,8 @@ const input = document.querySelector(".form__input");
 validationBtn.addEventListener("click", () => {
     message.innerHTML = "";
     output.innerHTML = "";
-
+    input.classList.remove("invalid");
+    input.classList.remove("valid");
     validateInput(input.value);
 
     if (input.value == null || input.value == "") {
@@ -16,9 +17,11 @@ validationBtn.addEventListener("click", () => {
     }
     else if(validateInput(input.value)) {
         output.innerHTML = `${input.value}`;
+        input.classList.add("valid");
     }
     else {
-        message.innerHTML = "SPZ není validní.\r\nPožadovaný formát 1AA 1111 nebo 1A1 1111";
+        message.innerHTML = "SPZ není validní.";
+        input.classList.add("invalid");
     }
 })
 

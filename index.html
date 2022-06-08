@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validátor SPZ</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./fav.png" type="image/x-icon">
 </head>
 <body>
     <section class="section-validation">
@@ -16,7 +17,12 @@
                 <div class="form__item">
                     <p class="form__text">Státní poznávací značka vozidla</p>
                     <input type="text" name="spz" class="form__input" placeholder="Zadejte SPZ..." required autofocus autocomplete= 'off'>
-                    <p class="form__text message"></p>
+                    <div class="form__tips">
+                        <p class="form__text message"></p>
+                        <div class="tooltip">
+                            <span class="tooltip__text">Formát SPZ: 9A9 9999, popř. 9AA 9999</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form__item-flex">
