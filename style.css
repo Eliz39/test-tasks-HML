@@ -67,6 +67,7 @@ body {
     border-radius: 6px;
     padding: 10px;
     font-size: 14px;
+    margin-bottom: 5px;
 }
 .invalid{
     border-color: red;
