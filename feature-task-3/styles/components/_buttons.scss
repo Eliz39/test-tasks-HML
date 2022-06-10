@@ -1,0 +1,17 @@
+.infobox__btn {
+    width: 158px;
+    background-color: $color-primary;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover, &:focus, &:active {
+        outline: none;
+        background-color: darken($color: $color-primary, $amount: 20)
+    }
+
+    @media screen and (min-width: 640px) {
+        display: none;
+    }
+}
