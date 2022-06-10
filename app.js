@@ -4,12 +4,13 @@ const errorEmpty = document.querySelector(".empty-email");
 const errorWrong = document.querySelector(".wrong-email");
 const succes = document.querySelector(".subscribed");
 const container = document.querySelector(".container");
+const form = document.querySelector(".form");
 
 function sendForm(event) {
-    submitBtn.removeEventListener("click", sendForm);
+    form.removeEventListener("submit", sendForm);
     event.preventDefault();
 
-    if(email.value == null || email.value == "") {
+    if (email.value == null || email.value == "") {
         errorEmpty.classList.remove("hidden");
         errorWrong.classList.add("hidden");
     } else {
@@ -31,8 +32,8 @@ function sendForm(event) {
                 return res.json();
             })
             .then(text => console.log(text))
-            .finally(() =>  submitBtn.addEventListener("click", sendForm))
+            .finally(() =>  form.addEventListener("submit", sendForm))
     }
 }
 
-submitBtn.addEventListener("click", sendForm);
+form.addEventListener("submit", sendForm);
