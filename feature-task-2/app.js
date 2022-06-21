@@ -1,36 +1,30 @@
 import {validateInput} from "./__validation.js";
 
 const output = document.querySelector(".form__output");
-const validationBtn = document.querySelector(".form__button");
+const form = document.querySelector(".form");
 const message = document.querySelector(".message");
 const input = document.querySelector(".form__input");
 
-function eventHandler() {
-    message.innerHTML = "";
-    output.innerHTML = "";
+function eventHandler(event) {
+    event.preventDefault()
+    message.innerText = "";
+    output.innerText = "";
     input.classList.remove("invalid");
     input.classList.remove("valid");
 
     if (input.value == null || input.value == "") {
-        message.innerHTML = "Zadejte SPZ";
+        message.innerText = "Zadejte SPZ";
         input.classList.add("invalid");
     }
     else if(validateInput(input.value)) {
-        output.innerHTML = `${input.value}`;
+        output.innerText = `${input.value}`;
         input.classList.add("valid");
     }
     else {
-        message.innerHTML = "SPZ není validní.";
+        message.innerText = "SPZ není validní.";
         input.classList.add("invalid");
     }
 }
 
-validationBtn.addEventListener("click", eventHandler);
-input.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        validationBtn.click();
-    }
-});
-
+form.addEventListener("submit", eventHandler);
 
