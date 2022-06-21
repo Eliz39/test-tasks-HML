@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+input:focus{
+    outline: none;
+}
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: "Lato", sans-serif;
+    background: url(./images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+}
+.form {
+    width: 400px;
+    min-height: 100px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    padding: 10px;
+}
+.hidden {
+    display: none;
+}
+.form__title, .subscribed__text {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.container__input-flex {
+    display: flex;
+}
+.form__input-email {
+    height: 35px;
+    text-indent: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border: 1px solid gray;
+}
+.form__input-submit {
+    height: 35px;
+    color: white;
+    font-size: 14px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: none;
+    background-color: rgb(17, 114, 17);
+    padding: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.form__input-submit:active, .form__input-submit:hover, .form__input-submit:focus {
+    background-color: rgb(18, 82, 18);
+}
+.empty-email, .wrong-email {
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+}
+.subscribed {
+    text-align: center;
+}
